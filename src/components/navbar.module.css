@@ -1,0 +1,162 @@
+.header {
+  width: 100%;
+  background-color: white; /* Matches the solid top bar in the image */
+  border-bottom: 0px solid #eaeaea;
+  padding: 1rem 0;
+}
+
+/* navbar.module.css */
+.nav {
+  max-width: 1400px; /* Increased from 1200px to push elements to the edges */
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Column */
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  font-family: var(--font-helvetica), Georgia, serif;
+  text-decoration: none;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  flex: 1; 
+  transition: color .5s ease;/* Helps push the center links exactly to the middle */
+}
+.logo:hover {
+  color: #bfa173; /* A premium architectural gold/tan hover state */
+}
+/* Center Column */
+.navLinks {
+  display: flex;
+  gap: 2.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #bfa173; /* A premium architectural gold/tan hover state */
+}
+/* Replace the old .ctaButton flex rules with this */
+.ctaWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ctaButton {
+  background-color: #bfa173;
+  color: #ffffff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #a68a5f;
+}
+/* Add this to your existing desktop styles to manage the new wrapper */
+.menuContainer {
+  display: flex;
+  flex: 2; /* Takes up the remaining space next to the logo */
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hide the hamburger button on desktop */
+.mobileToggle {
+  display: none;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .nav {
+    position: relative; /* Anchors the absolute dropdown menu */
+  }
+
+  /* Show the hamburger button */
+  .mobileToggle {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 50;
+  }
+
+  /* Create the 3-line hamburger icon using pure CSS */
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text-main);
+    position: relative;
+    transition: background-color 0.2s ease;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text-main);
+    left: 0;
+    transition: transform 0.2s ease, top 0.2s ease;
+  }
+
+  .hamburger::before { top: -6px; }
+  .hamburger::after { top: 6px; }
+
+  /* Animate hamburger into an 'X' when open */
+  .hamburgerOpen { background-color: transparent; }
+  .hamburgerOpen::before { top: 0; transform: rotate(45deg); }
+  .hamburgerOpen::after { top: 0; transform: rotate(-45deg); }
+
+  /* Hide the menu container by default on mobile */
+  .menuContainer {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Drops it directly below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    padding: 2rem;
+    border-bottom: 1px solid #eaeaea;
+    gap: 2rem;
+    z-index: 40;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Show the menu container when toggled */
+  .menuOpen {
+    display: flex;
+  }
+
+  /* Stack the links vertically */
+  .navLinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Center the button */
+  .ctaWrapper {
+    justify-content: center;
+  }
+}
