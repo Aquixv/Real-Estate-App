@@ -1,13 +1,14 @@
 .header {
   width: 100%;
-  background-color: white; /* Matches the solid top bar in the image */
-  border-bottom: 0px solid #eaeaea;
+  background-color: white;
+  border-bottom: 1px solid #eaeaea;
   padding: 1rem 0;
+  position: relative;
+  z-index: 100;
 }
 
-/* navbar.module.css */
 .nav {
-  max-width: 1400px; /* Increased from 1200px to push elements to the edges */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -17,24 +18,22 @@
 
 /* Left Column */
 .logo {
-  font-weight: 700;
-  font-size: 1.4rem;
-  font-family: var(--font-helvetica), Georgia, serif;
   text-decoration: none;
-  color: #1a1a1a;
-  letter-spacing: 0.05em;
   flex: 1; 
-  transition: color .5s ease;/* Helps push the center links exactly to the middle */
+  display: flex;
+  align-items: center;
+  height: 8vh;
+  width: 8vw;
 }
-.logo:hover {
-  color: #bfa173; /* A premium architectural gold/tan hover state */
-}
+
+
 /* Center Column */
 .navLinks {
   display: flex;
-  gap: 2.5rem;
-  flex: 1;
+  gap: 3rem; /* Increased spacing between links */
+  flex: 2;
   justify-content: center;
+  align-items: center;
 }
 
 .link {
@@ -43,20 +42,120 @@
   font-size: 0.95rem;
   font-weight: 500;
   transition: color 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
 }
 
 .link:hover {
-  color: #bfa173; /* A premium architectural gold/tan hover state */
+  color: #4f46e5; /* The new "chill" indigo color */
 }
-/* Replace the old .ctaButton flex rules with this */
+
+/* --- DROPDOWN LOGIC --- */
+.dropdown {
+  position: relative;
+}
+
+.dropdownContent {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  z-index: 200;
+  min-width: 260px;
+  padding: 0.75rem 0;
+}
+
+.dropdown:hover .dropdownContent {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem {
+  padding: 0.75rem 1.5rem;
+  color: #4a4a4a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: #f8fafc;
+  color: #4f46e5;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eaeaea;
+  margin: 0.5rem 0;
+}
+
+.viewAllItem {
+  padding: 0.75rem 1.5rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.viewAllItem:hover {
+  color: #4f46e5;
+}
+
+/* Right Column (Auth & Theme) */
 .ctaWrapper {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 1.7rem; /* Space between toggle, sign in, and register */
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.themeToggle:hover {
+  background-color: #f1f5f9;
+  color: #4f46e5;
+}
+
+.ghostButton {
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ghostButton:hover {
+  color: #4f46e5;
 }
 
 .ctaButton {
-  background-color: #bfa173;
+  background-color: #1a1a1a;
   color: #ffffff;
   padding: 0.6rem 1.5rem;
   border-radius: 6px;
@@ -67,28 +166,27 @@
 }
 
 .ctaButton:hover {
-  background-color: #a68a5f;
+  background-color: #4f46e5;
 }
-/* Add this to your existing desktop styles to manage the new wrapper */
+
 .menuContainer {
   display: flex;
-  flex: 2; /* Takes up the remaining space next to the logo */
+  flex: 3; 
   align-items: center;
   justify-content: space-between;
 }
 
-/* Hide the hamburger button on desktop */
 .mobileToggle {
   display: none;
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 768px) {
-  .nav {
-    position: relative; /* Anchors the absolute dropdown menu */
-  }
+@media (max-width: 1024px) {
+  .navLinks { gap: 1.5rem; }
+}
 
-  /* Show the hamburger button */
+@media (max-width: 768px) {
+  .nav { position: relative; }
   .mobileToggle {
     display: block;
     background: transparent;
@@ -98,12 +196,11 @@
     z-index: 50;
   }
 
-  /* Create the 3-line hamburger icon using pure CSS */
   .hamburger {
     display: block;
     width: 24px;
     height: 2px;
-    background-color: var(--color-text-main);
+    background-color: #1a1a1a;
     position: relative;
     transition: background-color 0.2s ease;
   }
@@ -114,7 +211,7 @@
     position: absolute;
     width: 24px;
     height: 2px;
-    background-color: var(--color-text-main);
+    background-color: #1a1a1a;
     left: 0;
     transition: transform 0.2s ease, top 0.2s ease;
   }
@@ -122,41 +219,57 @@
   .hamburger::before { top: -6px; }
   .hamburger::after { top: 6px; }
 
-  /* Animate hamburger into an 'X' when open */
   .hamburgerOpen { background-color: transparent; }
   .hamburgerOpen::before { top: 0; transform: rotate(45deg); }
   .hamburgerOpen::after { top: 0; transform: rotate(-45deg); }
 
-  /* Hide the menu container by default on mobile */
   .menuContainer {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%; /* Drops it directly below the navbar */
+    top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--color-background);
-    padding: 2rem;
+    background-color: white;
+    padding: 1rem 2rem 2rem;
     border-bottom: 1px solid #eaeaea;
-    gap: 2rem;
+    gap: 1.5rem;
     z-index: 40;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    max-height: 80vh;
+    overflow-y: auto;
   }
 
-  /* Show the menu container when toggled */
-  .menuOpen {
-    display: flex;
-  }
+  .menuOpen { display: flex; }
 
-  /* Stack the links vertically */
   .navLinks {
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
   }
 
-  /* Center the button */
+  .dropdown { width: 100%; }
+  
+  .dropdownContent {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid #eaeaea;
+    border-radius: 0;
+    padding: 0 0 0 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    width: 100%;
+  }
+
   .ctaWrapper {
-    justify-content: center;
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    border-top: 1px solid #eaeaea;
   }
 }

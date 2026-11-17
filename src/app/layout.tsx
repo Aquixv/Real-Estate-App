@@ -15,7 +15,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Lumen Designs | Architecture Studio",
+  title: "WeHouse",
   description: "Premium architectural and interior design solutions.",
 };
 
