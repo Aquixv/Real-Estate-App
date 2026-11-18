@@ -1,0 +1,134 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.searchWrapper {
+  background: white;
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  
+  /* Add this to override the hero section's centering */
+  text-align: left; 
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #6b7280;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: #1a1a1a;
+  background: #f3f4f6;
+}
+
+.activeTab {
+  color: black; 
+  background: #e0e7ff;
+}
+
+.searchForm {
+  display: flex;
+  align-items: flex-end; /* Aligns the inputs and button at the bottom */
+  gap: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1; /* Makes all input groups take up equal space */
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input, .select {
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  
+  /* Force left alignment */
+  text-align: left;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Optional vertical dividers between fields */
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: #eaeaea;
+  align-self: center;
+  margin-top: 15px; /* Offset for the label height */
+}
+
+.searchButton {
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: 45px; /* Fixed height to match inputs */
+}
+
+.searchButton:hover {
+  background-color: #4f46e5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .searchForm {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .divider {
+    display: none;
+  }
+  
+  .inputGroup {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 0.5rem;
+  }
+}
