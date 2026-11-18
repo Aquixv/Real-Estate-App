@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import HeroSearch from '@/components/HeroSearch';
+import FeaturedProperties from '@/components/FeaturedComponents';
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ... the rest of your sections will go here ... */}
+      <FeaturedProperties/>
       
     </main>
   );
