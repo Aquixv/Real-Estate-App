@@ -3,6 +3,9 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import HeroSearch from '@/components/HeroSearch';
 import FeaturedProperties from '@/components/FeaturedComponents';
+import PopularLocations from '@/components/PopularLocations';
+import AgentCTA from '@/components/AgentCTA';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -33,7 +36,9 @@ export default function Home() {
       </section>
 
       <FeaturedProperties/>
-      
+      <PopularLocations/>
+      <AgentCTA/>
+      <Footer/>
     </main>
   );
 }
