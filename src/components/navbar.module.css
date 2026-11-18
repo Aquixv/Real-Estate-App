@@ -202,8 +202,12 @@
   flex: 3; 
   align-items: center;
   justify-content: space-between;
+  -ms-overflow-style: none;  
+    scrollbar-width: none;
 }
-
+.menuContainer::-webkit-scrollbar {
+    display: none;
+  }
 /* Specific elements that only appear in the mobile sidebar */
 .mobileToggle,
 .overlay,
