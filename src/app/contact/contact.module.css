@@ -1,7 +1,7 @@
 .contactMain {
   min-height: 80vh;
-  padding: 8rem 2rem;
-  background-color: var(--color-background);
+  padding: 6rem 2rem;
+  background-color: var(--color-background, #ffffff);
 }
 
 .contactContainer {
@@ -20,45 +20,75 @@
 
 .title {
   font-family: var(--font-playfair), serif;
-  font-size: 4rem;
+  font-size: 3.75rem;
   line-height: 1.1;
-  color: var(--color-text-main);
+  color: var(--color-text-main, #1a1a1a);
   margin-bottom: 1.5rem;
 }
 
 .subtitle {
   font-size: 1.125rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-muted, #6b7280);
   line-height: 1.6;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   max-width: 90%;
 }
 
 .details {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2.25rem;
 }
 
-.detailItem strong {
+.detailItem strong,
+.whatsappBlock strong {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-text-main);
+  color: var(--color-text-main, #1a1a1a);
   margin-bottom: 0.5rem;
 }
 
 .detailItem p {
-  color: var(--color-text-muted);
+  color: var(--color-text-muted, #6b7280);
   line-height: 1.6;
+}
+
+/* WhatsApp Button */
+.whatsappBlock {
+  margin-top: 0.5rem;
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  background-color: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.whatsappBtn:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* Right Column Form */
 .formBlock {
   background-color: #FAFAFA;
-  padding: 4rem;
-  border-radius: 4px;
+  padding: 3.5rem;
+  border-radius: 12px;
+  border: 1px solid #eaeaea;
 }
 
 .form {
@@ -74,9 +104,9 @@
 }
 
 .inputGroup label {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-text-main);
+  color: var(--color-text-main, #1a1a1a);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -86,17 +116,21 @@
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #d1d5db;
   padding: 0.75rem 0;
   font-family: var(--font-montserrat), sans-serif;
   font-size: 1rem;
-  color: var(--color-text-main);
-  transition: border-color 0.3s ease;
+  color: var(--color-text-main, #1a1a1a);
+  transition: border-color 0.2s ease;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: #9ca3af;
 }
 
 .input:focus, .textarea:focus {
   outline: none;
-  border-bottom: 1px solid var(--color-accent-gold);
+  border-bottom: 1px solid #4f46e5;
 }
 
 .textarea {
@@ -104,21 +138,21 @@
 }
 
 .submitBtn {
-  background-color: var(--color-accent-gold);
+  background-color: #1a1a1a;
   color: white;
   border: none;
-  padding: 1.25rem;
+  padding: 1.15rem;
   font-family: var(--font-montserrat), sans-serif;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: background-color 0.2s ease;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .submitBtn:hover:not(:disabled) {
-  background-color: var(--color-accent-gold-hover);
+  background-color: #4f46e5;
 }
 
 .submitBtn:disabled {
@@ -127,17 +161,17 @@
 }
 
 .successMessage {
-  color: #2e7d32;
+  color: #15803d;
   font-size: 0.95rem;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .errorMessage {
-  color: #d32f2f;
+  color: #dc2626;
   font-size: 0.95rem;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 900px) {
@@ -149,8 +183,20 @@
     padding: 2rem;
   }
 }
+
 @media (max-width: 768px) {
-  .title { font-size: 2.5rem; word-break: break-word; }
-  .subtitle { font-size: 1rem; }
-  .contactContainer { grid-template-columns: 1fr; gap: 3rem; }
+  .contactMain {
+    padding: 4rem 1.5rem;
+  }
+  .title {
+    font-size: 2.5rem;
+    word-break: break-word;
+  }
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .contactContainer {
+    gap: 3rem;
+  }
 }
