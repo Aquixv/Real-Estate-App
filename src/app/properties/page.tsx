@@ -4,8 +4,7 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { mockProperties, NIGERIAN_STATES } from "@/app/data/mockProperties";
-import styles from "properties.module.css"
-
+import styles from "./properties.module.css"
 export default function PropertiesPage() {
   // Filter States
   const [searchState, setSearchState] = useState("All");
@@ -132,15 +131,15 @@ export default function PropertiesPage() {
                         {prop.title}
                       </Link>
                       <p className={styles.cardDesc}>{prop.description}</p>
-                      <p className={styles.cardLocation}>📍 {prop.location}</p>
+                      <p style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }} className={styles.cardLocation}> <img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/532539/location-pin.svg" alt="" /> {prop.location}</p>
                     </div>
 
                     <div>
                       <div className={styles.specsRow}>
-                        <span>🛏 {prop.beds} Beds</span>
-                        <span>🛁 {prop.baths} Baths</span>
-                        <span>🚽 {prop.toilets} Toilets</span>
-                        <span>🚗 {prop.parking} Parking</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/282327/beds-pillow.svg" alt="" /> {prop.beds} Beds</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/489323/shower.svg" alt="" /> {prop.baths} Baths</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/490421/toilet.svg" alt="" /> Toilets</span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/308311/parking-garage-transportation-car-parking.svg" alt="" /> Parking</span>
                       </div>
 
                       <div className={styles.cardFooter}>
