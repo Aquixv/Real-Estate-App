@@ -60,7 +60,7 @@ export default function FeaturedProperties() {
           <p className={styles.subtitle}>Listings from featured agents and developers, refreshed as new ones come in.</p>
         </div>
         <Link href="/properties" className={styles.viewAllBtn}>
-          View all listings →
+          View all listings
         </Link>
       </div>
 

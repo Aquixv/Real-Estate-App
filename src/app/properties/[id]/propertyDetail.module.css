@@ -1,0 +1,326 @@
+.pageWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 6rem;
+}
+
+.topNav {
+  margin-bottom: 1.5rem;
+}
+
+.backLink {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #eaeaea;
+  border-radius: 50px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.backLink:hover {
+  border-color: #1a1a1a;
+  background-color: #fafafa;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.categoryBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4f46e5;
+  background: #e0e7ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+}
+
+.typeBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  background: #f3f4f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+}
+
+.premiumBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #92400e;
+  background: #fef3c7;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  display: none;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 2.25rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.headerRight {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.priceLabel {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Hero Image */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f4f6;
+  margin-bottom: 3rem;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+/* 2-Column Content */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Specs Grid */
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.specBox {
+  background: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.specLabel {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.specValue {
+  font-size: 1.35rem;
+  color: #1a1a1a;
+}
+
+/* Sections */
+.sectionBlock {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.description {
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.overviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.overviewRow {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.overviewRow span {
+  color: #6b7280;
+}
+
+.overviewRow strong {
+  color: #1a1a1a;
+}
+
+/* Sticky Sidebar */
+.sidebar {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.agentCard {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.agentLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.agentName {
+  font-size: 1.35rem;
+  color: #1a1a1a;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.agentSubtext {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.ctaStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.whatsappBtn {
+  display: block;
+  text-align: center;
+  padding: 0.9rem;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.whatsappBtn:hover {
+  background: #25D366;
+}
+
+.callBtn {
+  display: block;
+  text-align: center;
+  padding: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.callBtn:hover {
+  border-color: #1a1a1a;
+}
+
+.safetyCard {
+  background: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.safetyCard h4 {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.safetyCard ul {
+  padding-left: 1.15rem;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .headerRight {
+    text-align: left;
+  }
+  .imageContainer {
+    height: 320px;
+  }
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .title {
+    font-size: 1.75rem;
+  }
+}
