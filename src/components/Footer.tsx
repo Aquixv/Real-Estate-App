@@ -35,8 +35,8 @@ export default function Footer() {
           <ul className={styles.list}>
             <li><Link href="/agents">Estate agents</Link></li>
             <li><Link href="/developers">Property developers</Link></li>
-            <li><Link href="/trends/price-index">Rent and house price index</Link></li>
-            <li><Link href="/trends/demand-supply">Demand vs supply</Link></li>
+            {/* <li><Link href="/trends/price-index">Rent and house price index</Link></li>
+            <li><Link href="/trends/demand-supply">Demand vs supply</Link></li> */}
           </ul>
         </div>
 
@@ -46,8 +46,8 @@ export default function Footer() {
           <ul className={styles.list}>
             <li><Link href="/advertise">Advertise your property</Link></li>
             <li><Link href="/advertise/types">Types of listings</Link></li>
-            <li><Link href="/advertise/premium">Premium Plus</Link></li>
-            <li><Link href="/advertise/boost">Boost your listing</Link></li>
+            {/* <li><Link href="/advertise/premium">Premium Plus</Link></li>
+            <li><Link href="/advertise/boost">Boost your listing</Link></li> */}
           </ul>
         </div>
 
@@ -58,7 +58,7 @@ export default function Footer() {
             <li><Link href="/about">About us</Link></li>
             <li><Link href="/help">Help centre</Link></li>
             <li><Link href="/contact">Contact us</Link></li>
-            <li><Link href="/apps">Mobile apps</Link></li>
+            {/* <li><Link href="/apps">Mobile apps</Link></li> */}
           </ul>
         </div>
 
@@ -66,7 +66,7 @@ export default function Footer() {
 
       <div className={styles.bottomBar}>
         <div className={styles.bottomContainer}>
-          <p>© {currentYear} Lumen Real Estate. All rights reserved.</p>
+          <p>© {currentYear} WeHouse. All rights reserved.</p>
           <div className={styles.legalLinks}>
             <Link href="/terms">Terms of Use</Link>
             <Link href="/privacy">Privacy Policy</Link>
