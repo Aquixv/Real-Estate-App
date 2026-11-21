@@ -4,7 +4,37 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { mockProperties, NIGERIAN_STATES } from "@/app/data/mockProperties";
-import styles from "./properties.module.css"
+import styles from "./properties.module.css";
+
+const LocationIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+    <circle cx="12" cy="10" r="3"></circle>
+  </svg>
+);
+
+const BedIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"></path>
+  </svg>
+);
+
+const BathIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"></path>
+    <line x1="10" y1="5" x2="8" y2="7"></line>
+    <line x1="2" y1="12" x2="22" y2="12"></line>
+    <line x1="7" y1="19" x2="7" y2="21"></line>
+    <line x1="17" y1="19" x2="17" y2="21"></line>
+  </svg>
+);
+
+const StarIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+  </svg>
+);
+
 export default function PropertiesPage() {
   // Filter States
   const [searchState, setSearchState] = useState("All");
@@ -115,7 +145,14 @@ export default function PropertiesPage() {
                       fill
                       className={styles.cardImage}
                     />
-                    {prop.isPremium && <span className={styles.premiumBadge}>Premium</span>}
+                    {prop.isPremium && (
+                      <span
+                        className={styles.premiumBadge}
+                        style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
+                      >
+                        <StarIcon /> Premium
+                      </span>
+                    )}
                   </Link>
 
                   {/* Details Section */}
@@ -131,15 +168,28 @@ export default function PropertiesPage() {
                         {prop.title}
                       </Link>
                       <p className={styles.cardDesc}>{prop.description}</p>
-                      <p style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }} className={styles.cardLocation}> <img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/532539/location-pin.svg" alt="" /> {prop.location}</p>
+                      <p
+                        style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
+                        className={styles.cardLocation}
+                      >
+                        <LocationIcon /> {prop.location}
+                      </p>
                     </div>
 
                     <div>
                       <div className={styles.specsRow}>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/282327/beds-pillow.svg" alt="" /> {prop.beds} Beds</span>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/489323/shower.svg" alt="" /> {prop.baths} Baths</span>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/490421/toilet.svg" alt="" /> Toilets</span>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}><img style={{ width: '16px', height: '16px', objectFit: 'contain' }} src="https://www.svgrepo.com/show/308311/parking-garage-transportation-car-parking.svg" alt="" /> Parking</span>
+                        <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                          <BedIcon /> {prop.beds} Beds
+                        </span>
+                        <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                          <BathIcon /> {prop.baths} Baths
+                        </span>
+                        <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                          <img style={{ width: "16px", height: "16px", objectFit: "contain" }} src="https://www.svgrepo.com/show/490421/toilet.svg" alt="" /> Toilets
+                        </span>
+                        <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                          <img style={{ width: "16px", height: "16px", objectFit: "contain" }} src="https://www.svgrepo.com/show/308311/parking-garage-transportation-car-parking.svg" alt="" /> Parking
+                        </span>
                       </div>
 
                       <div className={styles.cardFooter}>

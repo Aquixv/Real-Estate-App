@@ -141,7 +141,7 @@
   border-radius: 50px;
   font-size: 0.75rem;
   font-weight: 700;
-  display: none;
+  display: none !important;
 }
 
 .cardContent {
