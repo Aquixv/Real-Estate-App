@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FaBath, FaBed, FaCar, FaChair, FaLightbulb, FaToilet,  } from "react-icons/fa";
 import { mockProperties } from "@/app/data/mockProperties";
 import styles from "./propertyDetail.module.css";
+import PropertyActions from "./PropertyActions";
+import { FaHouse } from "react-icons/fa6";
 
 const LocationIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -84,8 +87,9 @@ export default async function PropertyDetailPage({ params }: PropertyDetailProps
           >
             <LocationIcon /> {property.location}
           </p>
+          <PropertyActions/>
         </div>
-
+       
         <div className={styles.headerRight}>
           <span className={styles.priceLabel}>Price</span>
           <p className={styles.price}>{formatPrice(property.price)}</p>
@@ -109,33 +113,64 @@ export default async function PropertyDetailPage({ params }: PropertyDetailProps
         {/* Left Column: Specs & Description */}
         <section className={styles.detailsColumn}>
           <div className={styles.specsGrid}>
-            <div className={styles.specBox}>
-              <span
-                className={styles.specLabel}
-                style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
-              >
-                <BedIcon /> Bedrooms
-              </span>
-              <strong className={styles.specValue}>{property.beds}</strong>
-            </div>
-            <div className={styles.specBox}>
-              <span
-                className={styles.specLabel}
-                style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
-              >
-                <BathIcon /> Bathrooms
-              </span>
-              <strong className={styles.specValue}>{property.baths}</strong>
-            </div>
-            <div className={styles.specBox}>
-              <span className={styles.specLabel}>Toilets</span>
-              <strong className={styles.specValue}>{property.toilets}</strong>
-            </div>
-            <div className={styles.specBox}>
-              <span className={styles.specLabel}>Parking</span>
-              <strong className={styles.specValue}>{property.parking}</strong>
-            </div>
-          </div>
+  <div className={styles.specCard}>
+    <div className={styles.specIcon}><FaBed/></div>
+    <div>
+      <strong className={styles.specValue}>{property.beds}</strong>
+      <span className={styles.specLabel}>Bedrooms</span>
+    </div>
+  </div>
+
+  <div className={styles.specCard}>
+    <div className={styles.specIcon}><FaBath/></div>
+    <div>
+      <strong className={styles.specValue}>{property.baths}</strong>
+      <span className={styles.specLabel}>Bathrooms</span>
+    </div>
+  </div>
+
+  <div className={styles.specCard}>
+    <div className={styles.specIcon}><FaToilet/></div>
+    <div>
+      <strong className={styles.specValue}>{property.toilets}</strong>
+      <span className={styles.specLabel}>Toilets</span>
+    </div>
+  </div>
+
+  <div className={styles.specCard}>
+    <div className={styles.specIcon}><FaHouse/></div>
+    <div>
+      <strong className={styles.specValue}>{property.type}</strong>
+      <span className={styles.specLabel}>Property type</span>
+    </div>
+  </div>
+
+  <div className={styles.specCard}>
+    <div className={styles.specIcon}><FaChair/></div>
+    <div>
+      <strong className={styles.specValue}>Furnished</strong>
+      <span className={styles.specLabel}>Furnishing</span>
+    </div>
+  </div>
+
+  <div className={styles.specCard}>
+    <div className={styles.specIcon}><FaLightbulb/></div>
+    <div>
+      <strong className={styles.specValue}>24/7</strong>
+      <span className={styles.specLabel}>Power Supply</span>
+    </div>
+  </div>
+
+  <div className={styles.specCard}>
+    <div className={styles.specIcon}><FaCar/></div>
+    <div>
+      <strong className={styles.specValue}>
+        {property.parking} {property.parking === 1 ? "space" : "spaces"}
+      </strong>
+      <span className={styles.specLabel}>Parking</span>
+    </div>
+  </div>
+</div>
 
           <div className={styles.sectionBlock}>
             <h2 className={styles.sectionTitle}>Property Description</h2>
@@ -175,6 +210,12 @@ export default async function PropertyDetailPage({ params }: PropertyDetailProps
             </p>
 
             <div className={styles.ctaStack}>
+              <Link
+  href={`/properties?agent=${encodeURIComponent(property.agentName)}`}
+  className={styles.sellerLink}
+>
+  View all properties by this seller
+</Link>
               <a
                 href={whatsappUrl}
                 target="_blank"
