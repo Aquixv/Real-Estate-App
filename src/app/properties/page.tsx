@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { mockProperties, NIGERIAN_STATES } from "@/app/data/mockProperties";
 import styles from "./properties.module.css";
-
 const LocationIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -34,15 +34,25 @@ const StarIcon = () => (
     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
   </svg>
 );
+function PropertiesContent() {
+  const searchParams = useSearchParams();
 
-export default function PropertiesPage() {
-  // Filter States
-  const [searchState, setSearchState] = useState("All");
-  const [category, setCategory] = useState("All");
-  const [type, setType] = useState("All");
-  const [maxPrice, setMaxPrice] = useState("All");
-  const [minBeds, setMinBeds] = useState("All");
+  // Initialize filter states from the URL (fallback to "All")
+  const [searchState, setSearchState] = useState(searchParams.get("state") || "All");
+  const [category, setCategory] = useState(searchParams.get("category") || "All");
+  const [type, setType] = useState(searchParams.get("type") || "All");
+  const [maxPrice, setMaxPrice] = useState(searchParams.get("maxPrice") || "All");
+  const [minBeds, setMinBeds] = useState(searchParams.get("minBeds") || "All");
   const [sortBy, setSortBy] = useState("default");
+
+  // Re-sync filters if the user clicks a Navbar/Footer link while already on /properties
+  useEffect(() => {
+    setSearchState(searchParams.get("state") || "All");
+    setCategory(searchParams.get("category") || "All");
+    setType(searchParams.get("type") || "All");
+    setMaxPrice(searchParams.get("maxPrice") || "All");
+    setMinBeds(searchParams.get("minBeds") || "All");
+  }, [searchParams]);
 
   const clearFilters = () => {
     setSearchState("All");
@@ -280,5 +290,12 @@ export default function PropertiesPage() {
 
       </div>
     </main>
+  );
+}
+export default function PropertiesPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: "4rem 2rem", textAlign: "center" }}>Loading properties...</div>}>
+      <PropertiesContent />
+    </Suspense>
   );
 }

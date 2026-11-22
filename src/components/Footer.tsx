@@ -22,10 +22,10 @@ export default function Footer() {
         <div className={styles.linkColumn}>
           <h4 className={styles.heading}>Popular property</h4>
           <ul className={styles.list}>
-            <li><Link href="/rent/houses/lagos">Houses for rent in Lagos</Link></li>
-            <li><Link href="/rent/flats/lagos">Flats for rent in Lagos</Link></li>
-            <li><Link href="/sale/houses/lagos">Houses for sale in Lagos</Link></li>
-            <li><Link href="/rent/houses/abuja">Houses for rent in Abuja</Link></li>
+            <li><Link href="/properties?category=For+Rent&type=House&state=Lagos">Houses for rent in Lagos</Link></li>
+<li><Link href="/properties?category=For+Rent&type=Flat+%2F+Apartment&state=Lagos">Flats for rent in Lagos</Link></li>
+<li><Link href="/properties?category=For+Sale&type=House&state=Lagos">Houses for sale in Lagos</Link></li>
+<li><Link href="/properties?category=For+Rent&type=House&state=Abuja">Houses for rent in Abuja</Link></li>
           </ul>
         </div>
 

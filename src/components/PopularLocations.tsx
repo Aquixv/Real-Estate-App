@@ -21,7 +21,7 @@ export default function PopularLocations() {
 
       <div className={styles.grid}>
         {locations.map((loc) => (
-          <Link href={`/locations/${loc.slug}`} key={loc.city} className={styles.card}>
+          <Link href={`/properties?state=${encodeURIComponent(loc.city)}`} key={loc.city} className={styles.card}>
             <span className={styles.status}>AVAILABLE NOW</span>
             <h3 className={styles.count}>{loc.count}</h3>
             <div className={styles.cardBottom}>

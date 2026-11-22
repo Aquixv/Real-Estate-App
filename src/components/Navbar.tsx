@@ -117,12 +117,12 @@ export default function Navbar() {
                 Buy <ChevronDown isOpen={activeMobileDropdown === 'buy'} />
               </div>
               <div className={`${styles.dropdownContent} ${activeMobileDropdown === 'buy' ? styles.mobileOpen : ''}`}>
-                <Link href="/buy/houses" className={styles.dropdownItem} onClick={closeMenu}>Houses</Link>
-                <Link href="/buy/flats" className={styles.dropdownItem} onClick={closeMenu}>Flats / Apartments</Link>
-                <Link href="/buy/lands" className={styles.dropdownItem} onClick={closeMenu}>Lands</Link>
-                <Link href="/buy/commercial" className={styles.dropdownItem} onClick={closeMenu}>Commercial Property</Link>
+                <Link href="/properties?category=For+Sale&type=House" className={styles.dropdownItem} onClick={closeMenu}>Houses</Link>
+                <Link href="/properties?category=For+Sale&type=Flat+%2F+Apartment" className={styles.dropdownItem} onClick={closeMenu}>Flats / Apartments</Link>
+                <Link href="/properties?category=For+Sale&type=Land" className={styles.dropdownItem} onClick={closeMenu}>Lands</Link>
+                <Link href="/properties?category=For+Sale&type=Commercial" className={styles.dropdownItem} onClick={closeMenu}>Commercial Property</Link>
                 <div className={styles.divider}></div>
-                <Link href="/buy" className={styles.viewAllItem} onClick={closeMenu}>View all properties for sale</Link>
+                <Link href="/properties?category=For+Sale" className={styles.viewAllItem} onClick={closeMenu}>View all properties for sale</Link>
               </div>
             </div>
 
@@ -131,12 +131,12 @@ export default function Navbar() {
                 Rent <ChevronDown isOpen={activeMobileDropdown === 'rent'} />
               </div>
               <div className={`${styles.dropdownContent} ${activeMobileDropdown === 'rent' ? styles.mobileOpen : ''}`}>
-                <Link href="/rent/houses" className={styles.dropdownItem} onClick={closeMenu}>Houses</Link>
-                <Link href="/rent/flats" className={styles.dropdownItem} onClick={closeMenu}>Flats / Apartments</Link>
-                <Link href="/rent/lands" className={styles.dropdownItem} onClick={closeMenu}>Lands</Link>
-                <Link href="/rent/commercial" className={styles.dropdownItem} onClick={closeMenu}>Commercial Property</Link>
+                <Link href="/properties?category=For+Rent&type=House" className={styles.dropdownItem} onClick={closeMenu}>Houses</Link>
+                <Link href="/properties?category=For+Rent&type=Flat+%2F+Apartment" className={styles.dropdownItem} onClick={closeMenu}>Flats / Apartments</Link>
+                <Link href="/properties?category=For+Rent&type=Land" className={styles.dropdownItem} onClick={closeMenu}>Lands</Link>
+                <Link href="/properties?category=For+Rent&type=Commercial" className={styles.dropdownItem} onClick={closeMenu}>Commercial Property</Link>
                 <div className={styles.divider}></div>
-                <Link href="/rent" className={styles.viewAllItem} onClick={closeMenu}>View all properties for rent</Link>
+                <Link href="/properties?category=For+Rent" className={styles.viewAllItem} onClick={closeMenu}>View all properties for rent</Link>
               </div>
             </div>
 

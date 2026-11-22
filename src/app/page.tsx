@@ -5,7 +5,6 @@ import HeroSearch from '@/components/HeroSearch';
 import FeaturedProperties from '@/components/FeaturedComponents';
 import PopularLocations from '@/components/PopularLocations';
 import AgentCTA from '@/components/AgentCTA';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -38,7 +37,6 @@ export default function Home() {
       <FeaturedProperties/>
       <PopularLocations/>
       <AgentCTA/>
-      <Footer/>
     </main>
   );
 }
