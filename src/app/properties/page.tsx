@@ -34,6 +34,13 @@ const StarIcon = () => (
     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
   </svg>
 );
+const FilterIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="4" y1="6" x2="20" y2="6" />
+    <line x1="7" y1="12" x2="17" y2="12" />
+    <line x1="10" y1="18" x2="14" y2="18" />
+  </svg>
+);
 function PropertiesContent() {
   const searchParams = useSearchParams();
 
@@ -82,7 +89,19 @@ function PropertiesContent() {
   }, [searchState, category, type, maxPrice, minBeds, sortBy]);
 
   const formatPrice = (price: number) => `₦${price.toLocaleString()}`;
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
+const activeFilterCount = [searchState, category, type, maxPrice, minBeds].filter(
+  (val) => val !== "All"
+).length;
+
+// Prevent background scrolling while the mobile drawer is open
+useEffect(() => {
+  document.body.style.overflow = isFilterOpen ? "hidden" : "";
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [isFilterOpen]);
   return (
     <main className={styles.pageWrapper}>
       {/* Top Header & Quick Pills */}
@@ -120,20 +139,36 @@ function PropertiesContent() {
         
         {/* Left Column: Sort Bar + Property Cards */}
         <section className={styles.listingsColumn}>
-          <div className={styles.resultsBar}>
-            <span className={styles.resultsCount}>
-              Showing <strong>{filteredProperties.length}</strong> properties
-            </span>
-            <select
-              className={styles.sortSelect}
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-            >
-              <option value="default">Sort: Default</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-            </select>
-          </div>
+<div className={styles.resultsBar}>
+  <span className={styles.resultsCount}>
+    Showing <strong>{filteredProperties.length}</strong>{" "}
+    {filteredProperties.length === 1 ? "property" : "properties"}
+  </span>
+
+  <div className={styles.resultsControls}>
+    <button
+      type="button"
+      className={styles.mobileFilterBtn}
+      onClick={() => setIsFilterOpen(true)}
+    >
+      <FilterIcon />
+      <span>Filters</span>
+      {activeFilterCount > 0 && (
+        <span className={styles.filterBadge}>{activeFilterCount}</span>
+      )}
+    </button>
+
+    <select
+      className={styles.sortSelect}
+      value={sortBy}
+      onChange={(e) => setSortBy(e.target.value)}
+    >
+      <option value="default">Sort: Default</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+    </select>
+  </div>
+</div>
 
           {filteredProperties.length === 0 ? (
             <div className={styles.emptyState}>
@@ -225,68 +260,115 @@ function PropertiesContent() {
             </div>
           )}
         </section>
+        {/* Mobile Backdrop */}
+{isFilterOpen && (
+  <div
+    className={styles.filterBackdrop}
+    onClick={() => setIsFilterOpen(false)}
+    aria-hidden="true"
+  />
+)}
 
-        {/* Right Column: Sticky Advanced Filters Sidebar */}
-        <aside className={styles.filterSidebar}>
-          <div className={styles.filterHeader}>
-            <h3>Advanced Filters</h3>
-            <button onClick={clearFilters} className={styles.clearLink}>
-              Clear all
-            </button>
-          </div>
+{/* Right Column on Desktop / Slide-Up Bottom Sheet on Mobile */}
+{/* Mobile Backdrop */}
+{isFilterOpen && (
+  <div
+    className={styles.filterBackdrop}
+    onClick={() => setIsFilterOpen(false)}
+    aria-hidden="true"
+  />
+)}
 
-          <div className={styles.filterGroup}>
-            <label>State</label>
-            <select value={searchState} onChange={(e) => setSearchState(e.target.value)}>
-              <option value="All">Any state</option>
-              {NIGERIAN_STATES.map((st) => (
-                <option key={st} value={st}>{st}</option>
-              ))}
-            </select>
-          </div>
+{/* Right Column on Desktop / Slide-Up Bottom Sheet on Mobile */}
+<aside
+  className={`${styles.filterSidebar} ${
+    isFilterOpen ? styles.filterSidebarOpen : ""
+  }`}
+>
+  <div className={styles.drawerHandle} aria-hidden="true" />
 
-          <div className={styles.filterGroup}>
-            <label>Category</label>
-            <select value={category} onChange={(e) => setCategory(e.target.value)}>
-              <option value="All">All categories</option>
-              <option value="For Sale">For Sale</option>
-              <option value="For Rent">For Rent</option>
-            </select>
-          </div>
+  <div className={styles.filterHeader}>
+    <h3>Advanced Filters</h3>
+    <div className={styles.filterHeaderActions}>
+      <button onClick={clearFilters} className={styles.clearLink}>
+        Clear all
+      </button>
+      <button
+        type="button"
+        onClick={() => setIsFilterOpen(false)}
+        className={styles.closeDrawerBtn}
+        aria-label="Close filters"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
 
-          <div className={styles.filterGroup}>
-            <label>Property Type</label>
-            <select value={type} onChange={(e) => setType(e.target.value)}>
-              <option value="All">Any type</option>
-              <option value="Flat / Apartment">Flat / Apartment</option>
-              <option value="House">House</option>
-              <option value="Land">Land</option>
-              <option value="Commercial">Commercial</option>
-            </select>
-          </div>
+  <div className={styles.filterBody}>
+    <div className={styles.filterGroup}>
+      <label>State</label>
+      <select value={searchState} onChange={(e) => setSearchState(e.target.value)}>
+        <option value="All">Any state</option>
+        {NIGERIAN_STATES.map((st) => (
+          <option key={st} value={st}>{st}</option>
+        ))}
+      </select>
+    </div>
 
-          <div className={styles.filterGroup}>
-            <label>Max Price</label>
-            <select value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)}>
-              <option value="All">Any price</option>
-              <option value="5000000">Up to ₦5M</option>
-              <option value="20000000">Up to ₦20M</option>
-              <option value="200000000">Up to ₦200M</option>
-              <option value="500000000">Up to ₦500M</option>
-            </select>
-          </div>
+    <div className={styles.filterGroup}>
+      <label>Category</label>
+      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <option value="All">All categories</option>
+        <option value="For Sale">For Sale</option>
+        <option value="For Rent">For Rent</option>
+      </select>
+    </div>
 
-          <div className={styles.filterGroup}>
-            <label>Bedrooms</label>
-            <select value={minBeds} onChange={(e) => setMinBeds(e.target.value)}>
-              <option value="All">Any beds</option>
-              <option value="1">1+ Beds</option>
-              <option value="2">2+ Beds</option>
-              <option value="3">3+ Beds</option>
-              <option value="4">4+ Beds</option>
-            </select>
-          </div>
-        </aside>
+    <div className={styles.filterGroup}>
+      <label>Property Type</label>
+      <select value={type} onChange={(e) => setType(e.target.value)}>
+        <option value="All">Any type</option>
+        <option value="Flat / Apartment">Flat / Apartment</option>
+        <option value="House">House</option>
+        <option value="Land">Land</option>
+        <option value="Commercial">Commercial</option>
+      </select>
+    </div>
+
+    <div className={styles.filterGroup}>
+      <label>Max Price</label>
+      <select value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)}>
+        <option value="All">Any price</option>
+        <option value="5000000">Up to ₦5M</option>
+        <option value="20000000">Up to ₦20M</option>
+        <option value="200000000">Up to ₦200M</option>
+        <option value="500000000">Up to ₦500M</option>
+      </select>
+    </div>
+
+    <div className={styles.filterGroup}>
+      <label>Bedrooms</label>
+      <select value={minBeds} onChange={(e) => setMinBeds(e.target.value)}>
+        <option value="All">Any beds</option>
+        <option value="1">1+ Beds</option>
+        <option value="2">2+ Beds</option>
+        <option value="3">3+ Beds</option>
+        <option value="4">4+ Beds</option>
+      </select>
+    </div>
+  </div>
+
+  <div className={styles.mobileApplyBar}>
+    <button
+      type="button"
+      className={styles.applyBtn}
+      onClick={() => setIsFilterOpen(false)}
+    >
+      Show {filteredProperties.length}{" "}
+      {filteredProperties.length === 1 ? "property" : "properties"}
+    </button>
+  </div>
+</aside>
 
       </div>
     </main>

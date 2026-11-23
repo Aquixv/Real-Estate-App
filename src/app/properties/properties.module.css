@@ -370,18 +370,161 @@
   border-radius: 8px;
   cursor: pointer;
 }
+.resultsControls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
+.mobileFilterBtn,
+.filterBackdrop,
+.drawerHandle,
+.closeDrawerBtn,
+.mobileApplyBar {
+  display: none;
+}
+
+.filterHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filterBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 /* Responsive */
 @media (max-width: 1024px) {
   .contentGrid {
     grid-template-columns: 1fr;
   }
+
+  .pillRow {
+    display: none;
+  }
+
+  /* Sticky filter + sort bar on mobile */
+  .resultsBar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: white;
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .mobileFilterBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    background: white;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .filterBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: #1a1a1a;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .filterBackdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 90;
+    backdrop-filter: blur(2px);
+  }
+
+  /* Transform the desktop sidebar into a slide-up bottom sheet */
   .filterSidebar {
-    order: -1; /* Moves filters above listings on tablet/mobile */
-    position: static;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 100;
+    max-height: 85vh;
+    border-radius: 20px 20px 0 0;
+    border: none;
+    padding: 0.75rem 1.25rem 1.25rem;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1), visibility 0.28s;
+  }
+
+  .filterSidebarOpen {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .drawerHandle {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: #d1d5db;
+    border-radius: 999px;
+    margin: 0 auto 0.25rem;
+  }
+
+  .closeDrawerBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #e5e7eb;
+    background: white;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .filterBody {
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 0.25rem;
+  }
+
+  .mobileApplyBar {
+    display: block;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+  }
+
+  .applyBtn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background: #1a1a1a;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
   }
 }
-
 @media (max-width: 768px) {
   .card {
     grid-template-columns: 1fr;
