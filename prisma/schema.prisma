@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  price       Int
+  category    String   // "For Sale" | "For Rent"
+  type        String   // "Flat / Apartment" | "House" | "Land" | "Commercial"
+  state       String
+  location    String
+  beds        Int      @default(0)
+  baths       Int      @default(0)
+  toilets     Int      @default(0)
+  parking     Int      @default(0)
+  furnishing  String   @default("Unfurnished") // "Furnished" | "Semi-Furnished" | "Unfurnished"
+  serviced    Boolean  @default(false)
+  isPremium   Boolean  @default(false)
+  image       String
+  agentName   String
+  agentPhone  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
