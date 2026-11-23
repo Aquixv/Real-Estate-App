@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client/extension";
-
-const prisma = new PrismaClient();
+import "dotenv/config";
+import { prisma } from "@/lib/prisma";
 
 const LOCATIONS: Record<string, string[]> = {
   Lagos: ["Lekki Phase 1", "Ikoyi", "Victoria Island", "Ikeja GRA", "Yaba", "Surulere", "Ajah"],
