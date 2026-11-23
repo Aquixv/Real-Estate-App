@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FaBath, FaBed, FaCar, FaChair, FaLightbulb, FaToilet,  } from "react-icons/fa";
-import { mockProperties } from "@/app/data/mockProperties";
+import { FaBath, FaBed, FaCar, FaChair, FaLightbulb, FaRulerCombined, FaToilet,  } from "react-icons/fa";
+import { prisma } from "@/lib/prisma";
 import styles from "./propertyDetail.module.css";
 import PropertyActions from "./PropertyActions";
 import { FaHouse } from "react-icons/fa6";
@@ -43,9 +43,7 @@ interface PropertyDetailProps {
 export default async function PropertyDetailPage({ params }: PropertyDetailProps) {
   const { id } = await params;
 
-  // Later, you'll swap this single line for:
-  // const property = await prisma.property.findUnique({ where: { id } });
-  const property = mockProperties.find((p) => p.id === id);
+  const property = await prisma.property.findUnique({ where: { id } });
 
   if (!property) {
     notFound();
@@ -55,7 +53,7 @@ export default async function PropertyDetailPage({ params }: PropertyDetailProps
   const whatsappUrl = `https://wa.me/${property.agentPhone}?text=${encodeURIComponent(
     `Hi ${property.agentName}, I'm interested in your listing: ${property.title} (${formatPrice(property.price)}). Is it still available?`
   )}`;
-
+const isLand = property.type === "Land";
   return (
     <main className={styles.pageWrapper}>
       {/* Breadcrumb / Back Link */}
@@ -113,63 +111,83 @@ export default async function PropertyDetailPage({ params }: PropertyDetailProps
         {/* Left Column: Specs & Description */}
         <section className={styles.detailsColumn}>
           <div className={styles.specsGrid}>
-  <div className={styles.specCard}>
-    <div className={styles.specIcon}><FaBed/></div>
-    <div>
-      <strong className={styles.specValue}>{property.beds}</strong>
-      <span className={styles.specLabel}>Bedrooms</span>
-    </div>
-  </div>
+  {!isLand && (
+    <>
+      <div className={styles.specCard}>
+        <div className={styles.specIcon}><FaBed /></div>
+        <div>
+          <strong className={styles.specValue}>{property.beds}</strong>
+          <span className={styles.specLabel}>Bedrooms</span>
+        </div>
+      </div>
+
+      <div className={styles.specCard}>
+        <div className={styles.specIcon}><FaBath /></div>
+        <div>
+          <strong className={styles.specValue}>{property.baths}</strong>
+          <span className={styles.specLabel}>Bathrooms</span>
+        </div>
+      </div>
+
+      <div className={styles.specCard}>
+        <div className={styles.specIcon}><FaToilet /></div>
+        <div>
+          <strong className={styles.specValue}>{property.toilets}</strong>
+          <span className={styles.specLabel}>Toilets</span>
+        </div>
+      </div>
+    </>
+  )}
 
   <div className={styles.specCard}>
-    <div className={styles.specIcon}><FaBath/></div>
-    <div>
-      <strong className={styles.specValue}>{property.baths}</strong>
-      <span className={styles.specLabel}>Bathrooms</span>
-    </div>
-  </div>
-
-  <div className={styles.specCard}>
-    <div className={styles.specIcon}><FaToilet/></div>
-    <div>
-      <strong className={styles.specValue}>{property.toilets}</strong>
-      <span className={styles.specLabel}>Toilets</span>
-    </div>
-  </div>
-
-  <div className={styles.specCard}>
-    <div className={styles.specIcon}><FaHouse/></div>
+    <div className={styles.specIcon}><FaHouse /></div>
     <div>
       <strong className={styles.specValue}>{property.type}</strong>
       <span className={styles.specLabel}>Property type</span>
     </div>
   </div>
 
-  <div className={styles.specCard}>
-    <div className={styles.specIcon}><FaChair/></div>
-    <div>
-      <strong className={styles.specValue}>Furnished</strong>
-      <span className={styles.specLabel}>Furnishing</span>
+  {isLand && property.plotSize && (
+    <div className={styles.specCard}>
+      <div className={styles.specIcon}><FaRulerCombined/></div>
+      <div>
+        <strong className={styles.specValue}>{property.plotSize}</strong>
+        <span className={styles.specLabel}>Plot size</span>
+      </div>
     </div>
-  </div>
+  )}
 
-  <div className={styles.specCard}>
-    <div className={styles.specIcon}><FaLightbulb/></div>
-    <div>
-      <strong className={styles.specValue}>24/7</strong>
-      <span className={styles.specLabel}>Power Supply</span>
-    </div>
-  </div>
+  {!isLand && (
+    <>
+      <div className={styles.specCard}>
+        <div className={styles.specIcon}><FaChair /></div>
+        <div>
+          <strong className={styles.specValue}>{property.furnishing}</strong>
+          <span className={styles.specLabel}>Furnishing</span>
+        </div>
+      </div>
 
-  <div className={styles.specCard}>
-    <div className={styles.specIcon}><FaCar/></div>
-    <div>
-      <strong className={styles.specValue}>
-        {property.parking} {property.parking === 1 ? "space" : "spaces"}
-      </strong>
-      <span className={styles.specLabel}>Parking</span>
-    </div>
-  </div>
+      {property.powerSupply && (
+        <div className={styles.specCard}>
+          <div className={styles.specIcon}><FaLightbulb /></div>
+          <div>
+            <strong className={styles.specValue}>{property.powerSupply}</strong>
+            <span className={styles.specLabel}>Power Supply</span>
+          </div>
+        </div>
+      )}
+
+      <div className={styles.specCard}>
+        <div className={styles.specIcon}><FaCar /></div>
+        <div>
+          <strong className={styles.specValue}>
+            {property.parking} {property.parking === 1 ? "space" : "spaces"}
+          </strong>
+          <span className={styles.specLabel}>Parking</span>
+        </div>
+      </div>
+    </>
+  )}
 </div>
 
           <div className={styles.sectionBlock}>
@@ -181,9 +199,9 @@ export default async function PropertyDetailPage({ params }: PropertyDetailProps
             <h2 className={styles.sectionTitle}>Overview</h2>
             <div className={styles.overviewList}>
               <div className={styles.overviewRow}>
-                <span>Reference ID</span>
-                <strong>{property.id.toUpperCase()}</strong>
-              </div>
+  <span>Reference ID</span>
+  <strong>#{property.id.slice(-8).toUpperCase()}</strong>
+</div>
               <div className={styles.overviewRow}>
                 <span>State</span>
                 <strong>{property.state}</strong>

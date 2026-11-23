@@ -20,8 +20,10 @@ model Property {
   baths       Int      @default(0)
   toilets     Int      @default(0)
   parking     Int      @default(0)
-  furnishing  String   @default("Unfurnished") // "Furnished" | "Semi-Furnished" | "Unfurnished"
+  furnishing  String   @default("Unfurnished")
   serviced    Boolean  @default(false)
+  powerSupply String?  // e.g. "24/7 Estate Power", "Band A Grid", "Solar + Inverter"
+  plotSize    String?  // e.g. "600 sqm", "1,000 sqm"
   isPremium   Boolean  @default(false)
   image       String
   agentName   String
