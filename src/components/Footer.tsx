@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
+async function getCachedYear() {
+  'use cache'
+  return new Date().getFullYear()
+}
 
+export default async function Footer() {
+const year = await getCachedYear()
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -66,7 +70,7 @@ export default function Footer() {
 
       <div className={styles.bottomBar}>
         <div className={styles.bottomContainer}>
-          <p>© {currentYear} WeHouse. All rights reserved.</p>
+          <p>© {year} WeHouse. All rights reserved.</p>
           <div className={styles.legalLinks}>
             <Link href="/terms">Terms of Use</Link>
             <Link href="/privacy">Privacy Policy</Link>

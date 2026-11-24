@@ -29,8 +29,11 @@ const RESIDENTIAL_IMAGES = [
 
 const LAND_IMAGES = [
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=800&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1647893168443-6322905c938b?w=800&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1697627903173-e22b6e04734d?w=800&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1624856472328-bfcf71c34741?w=800&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1769864425519-00c8c4611ebe?w=800&auto=format&fit=crop&q=60",
+  "https://images.unsplash.com/photo-1626834478854-9b5aefd826fd?w=800&auto=format&fit=crop&q=60",
 ];
 
 const COMMERCIAL_IMAGES = [
