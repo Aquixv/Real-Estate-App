@@ -56,7 +56,7 @@ export default function PropertyTypesPage() {
                 href={`/properties?type=${encodeURIComponent(item.query)}`}
                 className={styles.typeLink}
               >
-                Browse {item.name} →
+                Browse {item.name}
               </Link>
             </div>
           ))}

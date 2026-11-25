@@ -8,13 +8,23 @@
   max-width: 760px;
   margin-bottom: 4.5rem;
 }
-
+.buttonStyle{
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #eaeaea;
+  border-radius: 50px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
 .kicker {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #4f46e5;
+  color: black;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
@@ -53,7 +63,7 @@
 }
 
 .primaryBtn:hover {
-  background-color: #4f46e5;
+  background-color: black;
 }
 
 .secondaryBtn {
@@ -105,7 +115,7 @@
 .stepBadge {
   font-size: 0.8rem;
   font-weight: 700;
-  color: #4f46e5;
+  color: black;
   background: #e0e7ff;
   width: fit-content;
   padding: 0.25rem 0.65rem;
@@ -135,7 +145,7 @@
 .tag {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #4f46e5;
+  color: black;
   background: #e0e7ff;
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
@@ -153,7 +163,7 @@
 }
 
 .typeLink:hover {
-  color: #4f46e5;
+  color: black;
 }
 
 /* Bottom CTA Banner */

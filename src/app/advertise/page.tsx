@@ -14,7 +14,7 @@ export default function AdvertisePage() {
         </p>
         <div className={styles.heroActions}>
           <Link href="/contact" className={styles.primaryBtn}>
-            Get Started →
+            Get Started
           </Link>
           <Link href="/advertise/types" className={styles.secondaryBtn}>
             View Property Types
