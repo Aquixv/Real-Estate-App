@@ -1,0 +1,202 @@
+.pageWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem 6rem;
+}
+
+.hero {
+  max-width: 760px;
+  margin-bottom: 4.5rem;
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4f46e5;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-playfair), serif;
+  font-size: 3.25rem;
+  line-height: 1.15;
+  color: #1a1a1a;
+  margin-bottom: 1.25rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primaryBtn {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 0.9rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.primaryBtn:hover {
+  background-color: #4f46e5;
+}
+
+.secondaryBtn {
+  display: inline-block;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  padding: 0.9rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  border-color: #1a1a1a;
+}
+
+/* Grids */
+.section {
+  margin-bottom: 4.5rem;
+}
+
+.gridThree {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gridTwo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Cards */
+.card,
+.typeCard {
+  background: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.stepBadge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #4f46e5;
+  background: #e0e7ff;
+  width: fit-content;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+}
+
+.cardTitle,
+.typeTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #6b7280;
+}
+
+.typeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4f46e5;
+  background: #e0e7ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.typeLink {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.typeLink:hover {
+  color: #4f46e5;
+}
+
+/* Bottom CTA Banner */
+.ctaBanner {
+  background: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.bannerTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 1.85rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.bannerText {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .gridThree,
+  .gridTwo {
+    grid-template-columns: 1fr;
+  }
+  .ctaBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageWrapper {
+    padding: 3.5rem 1.5rem;
+  }
+  .title {
+    font-size: 2.35rem;
+  }
+}
