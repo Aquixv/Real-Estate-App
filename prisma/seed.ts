@@ -56,7 +56,7 @@ async function main() {
   const types = ["Flat / Apartment", "House", "Land", "Commercial"];
   const furnishings = ["Furnished", "Semi-Furnished", "Unfurnished"];
 
-  const listings = Array.from({ length: 30 }).map((_, i) => {
+  const listings = Array.from({ length: 50 }).map((_, i) => {
     const state = pick(states);
     const area = pick(LOCATIONS[state]);
     const category = pick(categories);

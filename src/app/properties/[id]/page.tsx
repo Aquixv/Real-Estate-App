@@ -232,7 +232,7 @@ const isLand = property.type === "Land";
   href={`/properties?agent=${encodeURIComponent(property.agentName)}`}
   className={styles.sellerLink}
 >
-  View all properties by this seller
+  View all properties by this Agent
 </Link>
               <a
                 href={whatsappUrl}

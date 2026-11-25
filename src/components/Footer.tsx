@@ -49,7 +49,7 @@ const year = await getCachedYear()
           <h4 className={styles.heading}>Advertise</h4>
           <ul className={styles.list}>
             <li><Link href="/advertise">Advertise your property</Link></li>
-            <li><Link href="/advertise/types">Types of listings</Link></li>
+            <li><Link href="/advertise/types">Types of Property</Link></li>
             {/* <li><Link href="/advertise/premium">Premium Plus</Link></li>
             <li><Link href="/advertise/boost">Boost your listing</Link></li> */}
           </ul>
