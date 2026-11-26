@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './navbar.module.css';
 
@@ -56,7 +56,19 @@ export default function Navbar() {
     setActiveMobileDropdown(null);
   };
 
-  const toggleTheme = () => setIsDarkMode(!isDarkMode);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+useEffect(() => {
+  const current = document.documentElement.getAttribute("data-theme") as "light" | "dark";
+  if (current) setTheme(current);
+}, []);
+
+const toggleTheme = () => {
+  const next = theme === "light" ? "dark" : "light";
+  setTheme(next);
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+};
 
   // Handles accordion behavior on mobile, does nothing on desktop (handled by CSS hover)
   const toggleMobileDropdown = (dropdownName: string) => {

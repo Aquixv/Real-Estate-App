@@ -26,7 +26,21 @@ export default function RootLayout({
 }>) {
   return (
     // Inject the CSS variables into the HTML tag so globals.css can see them
-    <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${montserrat.variable}`}>
+      <head>
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+          (function() {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+          })();
+        `,
+      }}
+    />
+  </head>
       <body>
         <Navbar />
         <main>{children}</main>
