@@ -55,7 +55,7 @@
 .statItem strong {
   font-family: var(--font-playfair), serif;
   font-size: 3rem;
-  color: black;
+  color: var(--accent);
   line-height: 1;
 }
 

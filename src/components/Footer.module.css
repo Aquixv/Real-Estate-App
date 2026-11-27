@@ -1,5 +1,5 @@
 .footer {
-  background-color: #1a1e29; /* Deep slate blue/black to match the reference */
+  background-color: #1a1e29; /* Deep slate blue/var(--accent) to match the reference */
   color: #9ca3af;
   font-family: var(--font-sans), sans-serif;
   border-top: 1px solid #2d3748;
@@ -42,7 +42,7 @@
 }
 
 .heading {
-  color: var(--bg-card);
+  color: var(--text-footer);
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
@@ -65,7 +65,7 @@
 }
 
 .list a:hover {
-  color: var(--bg-card);
+  color: var(--text-footer);
 }
 
 /* Bottom Bar */
@@ -97,7 +97,7 @@
 }
 
 .legalLinks a:hover {
-  color: var(--bg-card);
+  color: var(--text-footer);;
 }
 
 /* Responsive Breakpoints */

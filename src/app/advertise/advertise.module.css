@@ -24,7 +24,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: black;
+  color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
@@ -63,7 +63,7 @@
 }
 
 .primaryBtn:hover {
-  background-color: black;
+  background-color: var(--accent);
 }
 
 .secondaryBtn {
@@ -115,8 +115,8 @@
 .stepBadge {
   font-size: 0.8rem;
   font-weight: 700;
-  color: black;
-  background: #e0e7ff;
+  color: var(--accent);
+  background: var(--accent-soft);
   width: fit-content;
   padding: 0.25rem 0.65rem;
   border-radius: 50px;
@@ -145,8 +145,8 @@
 .tag {
   font-size: 0.75rem;
   font-weight: 600;
-  color: black;
-  background: #e0e7ff;
+  color: var(--accent);
+  background: var(--accent-soft);
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
   white-space: nowrap;
@@ -163,7 +163,7 @@
 }
 
 .typeLink:hover {
-  color: black;
+  color: var(--accent);
 }
 
 /* Bottom CTA Banner */

@@ -130,7 +130,7 @@
 
 .input:focus, .textarea:focus {
   outline: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--accent);
 }
 
 .textarea {
@@ -152,7 +152,7 @@
 }
 
 .submitBtn:hover:not(:disabled) {
-  background-color: black;
+  background-color: var(--accent);
 }
 
 .submitBtn:disabled {

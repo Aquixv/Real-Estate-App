@@ -55,13 +55,13 @@
 }
 
 .pill:hover {
-  border-color: black;
-  color: black;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .pillActive {
-  background: black;
-  border-color: black;
+  background: var(--accent);
+  border-color: var(--accent);
   color: var(--bg-card);
 }
 
@@ -188,15 +188,15 @@
 .categoryTag {
   font-size: 0.75rem;
   font-weight: 600;
-  color: black;
-  background: #e0e7ff;
+  color: var(--accent);
+  background: var(--accent-soft);
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
 }
 
 .typeText {
   font-size: 0.85rem;
-  color: black;
+  color: var(--accent);
   font-weight: 500;
   margin: 0.25rem 0 0.5rem;
 }
@@ -211,7 +211,7 @@
 }
 
 .cardTitle:hover {
-  color: black;
+  color: var(--accent);
 }
 
 .cardDesc {
@@ -286,7 +286,7 @@
 }
 
 .whatsappBtn:hover {
-  background: black;
+  background: var(--accent);
 }
 
 /* Sticky Filter Sidebar */
@@ -318,7 +318,7 @@
 .clearLink {
   background: none;
   border: none;
-  color: black;
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
@@ -350,7 +350,7 @@
 }
 
 .filterGroup select:focus {
-  border-color: black;
+  border-color: var(--accent);
 }
 
 .emptyState {

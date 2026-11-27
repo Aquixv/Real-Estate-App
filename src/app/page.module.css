@@ -305,7 +305,7 @@
 
 /* --- SECTION 5: CTA --- */
 .ctaSection {
-  background-color: #2e2e2edc; /* Slightly lighter than pure black */
+  background-color: #2e2e2edc; /* Slightly lighter than pure var(--accent) */
   color: var(--bg-card);
   padding: 6rem 2rem 5rem 2rem; /* Reduced bottom padding to pull footer up */
   text-align: center;
@@ -398,7 +398,7 @@ font-family: var(--font-playfair), Georgia, serif;
 
 .footerHeading {
   font-family: var(--font-playfair), serif; /* Gives the headers that editorial weight */
-  color: var(--bg-card);
+  color: var(--text-footer);
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
   font-weight: 400;
@@ -420,7 +420,7 @@ font-family: var(--font-playfair), Georgia, serif;
 }
 
 .footerList a:hover {
-  color: var(--bg-card);
+  color: var(--text-footer);
 }
 
 .footerSpacing {

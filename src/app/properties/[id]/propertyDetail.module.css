@@ -43,8 +43,8 @@
 .categoryBadge {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #4f46e5;
-  background: #e0e7ff;
+  color: var(--accent);
+  background: var(--accent-soft);
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
 }
@@ -328,9 +328,9 @@
 }
 
 .actionPillSaved {
-  border-color: #4f46e5;
-  background: #e0e7ff;
-  color: #4f46e5;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 /* Expanded Icon Specs Grid */
@@ -356,7 +356,7 @@
   height: 38px;
   border-radius: 8px;
   background: #eef2ff;
-  color: black;
+  color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,7 +385,7 @@
   margin-top: 1.25rem;
   padding-top: 1rem;
   border-top: 1px solid #f3f4f6;
-  color: black;
+  color: var(--accent);
   font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
