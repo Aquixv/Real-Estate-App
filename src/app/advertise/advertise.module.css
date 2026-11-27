@@ -103,7 +103,7 @@
 /* Cards */
 .card,
 .typeCard {
-  background: #fafafa;
+  background: var(--bg-subtle);
   border: 1px solid #eaeaea;
   border-radius: 12px;
   padding: 2rem;
@@ -168,7 +168,7 @@
 
 /* Bottom CTA Banner */
 .ctaBanner {
-  background: #fafafa;
+  background: var(--bg-subtle);
   border: 1px solid #eaeaea;
   border-radius: 16px;
   padding: 3rem;

@@ -22,7 +22,7 @@
 
 .backLink:hover {
   border-color: #1a1a1a;
-  background-color: #fafafa;
+  background-color: var(--bg-subtle);
 }
 
 /* Header */
@@ -133,7 +133,7 @@
 }
 
 .specBox {
-  background: #fafafa;
+  background: var(--bg-subtle);
   border: 1px solid #eaeaea;
   border-radius: 10px;
   padding: 1.25rem;
@@ -273,7 +273,7 @@
 }
 
 .safetyCard {
-  background: #fafafa;
+  background: var(--bg-subtle);
   border: 1px solid #eaeaea;
   border-radius: 12px;
   padding: 1.25rem 1.5rem;

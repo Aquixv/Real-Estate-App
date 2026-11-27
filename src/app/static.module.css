@@ -49,7 +49,7 @@
 }
 
 .faqItem {
-  background: #fafafa;
+  background: var(--bg-subtle);
   border: 1px solid #eaeaea;
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
@@ -130,7 +130,7 @@
 
 /* Bottom Callout */
 .callout {
-  background: #fafafa;
+  background: var(--bg-subtle);
   border: 1px solid #eaeaea;
   border-radius: 12px;
   padding: 2rem;

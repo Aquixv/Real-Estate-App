@@ -342,7 +342,7 @@
   padding: 0.65rem 0.75rem;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  background: #fafafa;
+  background: var(--bg-subtle);
   font-size: 0.9rem;
   color: #1a1a1a;
   outline: none;
@@ -356,7 +356,7 @@
 .emptyState {
   text-align: center;
   padding: 4rem 2rem;
-  background: #fafafa;
+  background: var(--bg-subtle);
   border-radius: 12px;
   border: 1px dashed #d1d5db;
 }
