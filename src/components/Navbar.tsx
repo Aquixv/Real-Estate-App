@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './navbar.module.css';
 // Ideally move these 4 SVGs to ./NavIcons.tsx
 import { ChevronDown, XIcon, SunIcon, MoonIcon } from './NavIcons';
-
+import Logo from '/next/Logo.png'
 const PROPERTY_TYPES = [
   { label: 'Houses', param: 'House' },
   { label: 'Flats / Apartments', param: 'Flat+%2F+Apartment' },
@@ -54,7 +54,7 @@ const BrandLogo = () => (
   <span className={styles.logoPlaceholder}>
     <img
       className={styles.logo}
-      src="https://logowik.com/content/uploads/images/real-estate-buildings208.logowik.com.webp"
+      src="/images/Logo.png"
       alt="Logo"
     />
   </span>

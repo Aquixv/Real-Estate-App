@@ -17,11 +17,12 @@
   --bg-subtle: #fafafa;
   --text-primary: #1a1a1a;
   --text-secondary: #4b5563;
-  --text-muted: var(--text-muted);
+  --text-muted: #6b7280;
   --border-color: #eaeaea;
   --border-strong: #d1d5db;
   --accent: #4f46e5;
   --accent-soft: #e0e7ff;
+  --text-active-tab: black;
 }
 [data-theme="dark"] {
   --bg-page: #0b0f19;
