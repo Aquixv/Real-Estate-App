@@ -4,7 +4,7 @@
 }
 
 .searchWrapper {
-  background: white;
+  background: var(--bg-card);
   padding: 0.5rem 1rem 1rem 1rem;
   border-radius: 12px;
   width: 100%;

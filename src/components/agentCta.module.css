@@ -47,7 +47,7 @@
 
 .ctaButton {
   background-color: #e11d48;
-  color: white;
+  color: var(--bg-card);
   padding: 0.8rem 2rem;
   border-radius: 50px;
   font-weight: 600;

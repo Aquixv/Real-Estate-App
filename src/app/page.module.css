@@ -81,7 +81,7 @@
 
 .btnPrimary {
   background-color: var(--color-accent-gold);
-  color: white;
+  color: var(--bg-card);
   padding: 0.8rem 2rem;
   border-radius: 6px;
   text-decoration: none;
@@ -94,8 +94,8 @@
 }
 
 .btnSecondary {
-  border: 1px solid white;
-  color: white;
+  border: 1px solid var(--bg-card);
+  color: var(--bg-card);
   padding: 0.8rem 2rem;
   border-radius: 6px;
   text-decoration: none;
@@ -293,7 +293,7 @@
   width: 100%;
   padding: 3rem;
   background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  color: white;
+  color: var(--bg-card);
 }
 
 .showcaseOverlay h3 {
@@ -305,7 +305,7 @@
 /* --- SECTION 5: CTA --- */
 .ctaSection {
   background-color: #2e2e2edc; /* Slightly lighter than pure black */
-  color: white;
+  color: var(--bg-card);
   padding: 6rem 2rem 5rem 2rem; /* Reduced bottom padding to pull footer up */
   text-align: center;
   display: flex;
@@ -327,7 +327,7 @@
 
 .ctaButtonLarge {
   background-color: var(--color-accent-gold);
-  color: white;
+  color: var(--bg-card);
   padding: 1rem 3rem;
   border-radius: 4px;
   text-decoration: none;
@@ -397,7 +397,7 @@ font-family: var(--font-playfair), Georgia, serif;
 
 .footerHeading {
   font-family: var(--font-playfair), serif; /* Gives the headers that editorial weight */
-  color: white;
+  color: var(--bg-card);
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
   font-weight: 400;
@@ -419,7 +419,7 @@ font-family: var(--font-playfair), Georgia, serif;
 }
 
 .footerList a:hover {
-  color: white;
+  color: var(--bg-card);
 }
 
 .footerSpacing {
@@ -433,7 +433,7 @@ font-family: var(--font-playfair), Georgia, serif;
 }
 
 .footerSocials a {
-  color: white;
+  color: var(--bg-card);
   font-size: 1.2rem;
   transition: opacity 0.2s ease;
 }
@@ -452,7 +452,7 @@ font-family: var(--font-playfair), Georgia, serif;
 }
 
 .logo {
-  color: white;
+  color: var(--bg-card);
   font-family: var(--font-playfair), serif;
   font-size: 1.5rem;
   letter-spacing: 0.05em;

@@ -31,7 +31,7 @@ export default function GlobalNotFound() {
         href="/" 
         style={{
           backgroundColor: "var(--color-accent-gold)",
-          color: "white",
+          color: "var(--bg-card)",
           padding: "1rem 2.5rem",
           borderRadius: "4px",
           textDecoration: "none",

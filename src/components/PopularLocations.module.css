@@ -43,7 +43,7 @@
   border: 1px solid #eaeaea;
   border-radius: 12px;
   text-decoration: none;
-  background-color: white;
+  background-color: var(--bg-card);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 

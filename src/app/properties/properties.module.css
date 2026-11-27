@@ -46,7 +46,7 @@
   padding: 0.45rem 1rem;
   border-radius: 50px;
   border: 1px solid #e5e7eb;
-  background: white;
+  background: var(--bg-card);
   color: #374151;
   font-size: 0.85rem;
   font-weight: 500;
@@ -62,11 +62,11 @@
 .pillActive {
   background: black;
   border-color: black;
-  color: white;
+  color: var(--bg-card);
 }
 
 .pillActive:hover {
-  color: white;
+  color: var(--bg-card);
 }
 
 /* 2-Column Layout */
@@ -93,7 +93,7 @@
   padding: 0.5rem 1rem;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  background: white;
+  background: var(--bg-card);
   font-size: 0.9rem;
   color: #1a1a1a;
   cursor: pointer;
@@ -110,7 +110,7 @@
 .card {
   display: grid;
   grid-template-columns: 320px 1fr;
-  background: white;
+  background: var(--bg-card);
   border: 1px solid #eaeaea;
   border-radius: 12px;
   overflow: hidden;
@@ -148,7 +148,7 @@
   top: 1rem;
   left: 1rem;
   background-color: rgba(0,0,0,0.5);
-  color: white;
+  color: var(--bg-card);
   border: none;
   width: 36px;
   height: 36px;
@@ -278,7 +278,7 @@
   padding: 0.5rem 1.25rem;
   border-radius: 50px;
   background: #1a1a1a;
-  color: white;
+  color: var(--bg-card);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -291,7 +291,7 @@
 
 /* Sticky Filter Sidebar */
 .filterSidebar {
-  background: white;
+  background: var(--bg-card);
   border: 1px solid #eaeaea;
   border-radius: 12px;
   padding: 1.5rem;
@@ -365,7 +365,7 @@
   margin-top: 1rem;
   padding: 0.6rem 1.5rem;
   background: #1a1a1a;
-  color: white;
+  color: var(--bg-card);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -410,7 +410,7 @@
     position: sticky;
     top: 0;
     z-index: 20;
-    background: white;
+    background: var(--bg-card);
     padding: 0.75rem 0;
     margin-bottom: 1rem;
     border-bottom: 1px solid #f3f4f6;
@@ -425,7 +425,7 @@
     padding: 0.5rem 0.9rem;
     border: 1px solid transparent;
     border-radius: 8px;
-    background: white;
+    background: var(--bg-card);
     color: #1a1a1a;
     font-size: 0.9rem;
     font-weight: 600;
@@ -441,7 +441,7 @@
     padding: 0 6px;
     border-radius: 999px;
     background: #1a1a1a;
-    color: white;
+    color: var(--bg-card);
     font-size: 0.75rem;
     font-weight: 700;
   }
@@ -495,7 +495,7 @@
     height: 32px;
     border-radius: 50%;
     border: 1px solid #e5e7eb;
-    background: white;
+    background: var(--bg-card);
     color: #1a1a1a;
     font-size: 0.9rem;
     cursor: pointer;
@@ -519,7 +519,7 @@
     border: none;
     border-radius: 10px;
     background: #1a1a1a;
-    color: white;
+    color: var(--bg-card);
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;

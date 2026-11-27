@@ -71,7 +71,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background-color: white;
+  background-color: var(--bg-card);
   min-width: 260px; /* Increased to prevent View All text wrapping */
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   border-radius: 8px;
@@ -287,7 +287,7 @@
     width: 85%;
     max-width: 320px;
     height: 100vh;
-    background-color: white;
+    background-color: var(--bg-card);
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
@@ -377,7 +377,7 @@
   .ctaWrapper {
     justify-content: flex-start;
     padding-top: 1.5rem;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid transparent;
     margin-top: auto;
   }
   .themeToggleWrapper {
