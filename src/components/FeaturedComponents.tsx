@@ -79,7 +79,7 @@ export default async function FeaturedProperties() {
                 )}
                 {property.baths > 0 && (
                   <div className={styles.specItem}>
-                    <BathIcon /> {property.baths} baths
+                    <BathIcon />{property.baths} {property.baths === 1 ? "bath" : "baths"}
                   </div>
                 )}
               </div>

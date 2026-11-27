@@ -28,13 +28,13 @@
 .title {
   font-family: var(--font-playfair), serif;
   font-size: 3rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   line-height: 1.15;
   margin-bottom: 1rem;
 }
 
 .message {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 2.5rem;
@@ -48,7 +48,7 @@
 }
 
 .primaryBtn {
-  background-color: #1a1a1a;
+  background-color: var(--text-primary);
   color: var(--bg-card);
   padding: 0.85rem 1.75rem;
   border-radius: 8px;
@@ -63,9 +63,9 @@
 }
 
 .secondaryBtn {
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-strong);
   background-color: var(--bg-card);
-  color: #1a1a1a;
+  color: var(--text-primary);
   padding: 0.85rem 1.75rem;
   border-radius: 8px;
   font-weight: 600;
@@ -75,7 +75,7 @@
 }
 
 .secondaryBtn:hover {
-  border-color: #1a1a1a;
+  border-color: var(--text-primary);
 }
 
 @media (max-width: 600px) {

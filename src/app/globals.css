@@ -17,7 +17,7 @@
   --bg-subtle: #fafafa;
   --text-primary: #1a1a1a;
   --text-secondary: #4b5563;
-  --text-muted: #6b7280;
+  --text-muted: var(--text-muted);
   --border-color: #eaeaea;
   --border-strong: #d1d5db;
   --accent: #4f46e5;
@@ -34,6 +34,7 @@
   --border-strong: #374151;
   --accent: #6366f1;
   --accent-soft: rgba(99, 102, 241, 0.16);
+  --text-active-tab:white;
 }
 /* 3. Base Typography */
 body {

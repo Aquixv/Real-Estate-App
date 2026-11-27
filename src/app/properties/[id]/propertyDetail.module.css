@@ -11,9 +11,9 @@
 .backLink {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 50px;
-  color: #1a1a1a;
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -21,7 +21,7 @@
 }
 
 .backLink:hover {
-  border-color: #1a1a1a;
+  border-color: var(--text-primary);
   background-color: var(--bg-subtle);
 }
 
@@ -71,13 +71,13 @@
 .title {
   font-family: var(--font-playfair), serif;
   font-size: 2.25rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }
 
 .location {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 
@@ -91,14 +91,14 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #6b7280;
+  color: var(--text-muted);
   margin-bottom: 0.25rem;
 }
 
 .price {
   font-size: 2rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 /* Hero Image */
@@ -134,7 +134,7 @@
 
 .specBox {
   background: var(--bg-subtle);
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 1.25rem;
   display: flex;
@@ -144,12 +144,12 @@
 
 .specLabel {
   font-size: 0.8rem;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .specValue {
   font-size: 1.35rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 /* Sections */
@@ -160,14 +160,14 @@
 .sectionTitle {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .description {
-  color: #4b5563;
+  color: var(--text-secondary);
   font-size: 1.05rem;
   line-height: 1.8;
 }
@@ -182,16 +182,16 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.75rem;
-  border-bottom: 1px dashed #e5e7eb;
+  border-bottom: 1px dashed var(--border-color);
   font-size: 0.95rem;
 }
 
 .overviewRow span {
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .overviewRow strong {
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 /* Sticky Sidebar */
@@ -205,7 +205,7 @@
 
 .agentCard {
   background: var(--bg-card);
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.75rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
@@ -215,18 +215,18 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .agentName {
   font-size: 1.35rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin: 0.25rem 0 0.75rem;
 }
 
 .agentSubtext {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
@@ -242,7 +242,7 @@
   text-align: center;
   padding: 0.9rem;
   border-radius: 8px;
-  background: #1a1a1a;
+  background: var(--text-primary);
   color: var(--bg-card);
   font-weight: 600;
   font-size: 0.95rem;
@@ -259,9 +259,9 @@
   text-align: center;
   padding: 0.9rem;
   border-radius: 8px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-strong);
   background: var(--bg-card);
-  color: #1a1a1a;
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
@@ -269,25 +269,25 @@
 }
 
 .callBtn:hover {
-  border-color: #1a1a1a;
+  border-color: var(--text-primary);
 }
 
 .safetyCard {
   background: var(--bg-subtle);
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
 }
 
 .safetyCard h4 {
   font-size: 0.9rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 
 .safetyCard ul {
   padding-left: 1.15rem;
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 0.85rem;
   line-height: 1.6;
   display: flex;
@@ -308,7 +308,7 @@
   gap: 0.45rem;
   padding: 0.5rem 1rem;
   border-radius: 50px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   background: var(--bg-card);
   color: #374151;
   font-size: 0.85rem;
@@ -318,8 +318,8 @@
 }
 
 .actionPill:hover:not(:disabled) {
-  border-color: #1a1a1a;
-  color: #1a1a1a;
+  border-color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 .actionPill:disabled {
@@ -346,7 +346,7 @@
   align-items: center;
   gap: 0.85rem;
   background: #f8fafc;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1rem 1.15rem;
 }
@@ -368,14 +368,14 @@
   display: block;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
   line-height: 1.2;
 }
 
 .specLabel {
   display: block;
   font-size: 0.78rem;
-  color: #6b7280;
+  color: var(--text-muted);
   margin-top: 0.15rem;
 }
 

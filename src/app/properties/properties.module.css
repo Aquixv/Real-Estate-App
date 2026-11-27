@@ -11,12 +11,12 @@
 .title {
   font-family: var(--font-playfair), serif;
   font-size: 2.75rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 
 .subtitle {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 1rem;
   max-width: 750px;
   line-height: 1.6;
@@ -33,7 +33,7 @@
 .pillLabel {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #4b5563;
+  color: var(--text-secondary);
 }
 
 .pills {
@@ -45,7 +45,7 @@
 .pill {
   padding: 0.45rem 1rem;
   border-radius: 50px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   background: var(--bg-card);
   color: #374151;
   font-size: 0.85rem;
@@ -86,16 +86,16 @@
 
 .resultsCount {
   font-size: 0.95rem;
-  color: #4b5563;
+  color: var(--text-secondary);
 }
 
 .sortSelect {
   padding: 0.5rem 1rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   background: var(--bg-card);
   font-size: 0.9rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   cursor: pointer;
   outline: none;
 }
@@ -111,7 +111,7 @@
   display: grid;
   grid-template-columns: 320px 1fr;
   background: var(--bg-card);
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   overflow: hidden;
   transition: box-shadow 0.2s ease;
@@ -182,7 +182,7 @@
 .price {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .categoryTag {
@@ -205,7 +205,7 @@
   display: block;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
@@ -216,7 +216,7 @@
 
 .cardDesc {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-muted);
   line-height: 1.5;
   margin-bottom: 0.75rem;
   display: -webkit-box;
@@ -227,7 +227,7 @@
 
 .cardLocation {
   font-size: 0.85rem;
-  color: #4b5563;
+  color: var(--text-secondary);
 }
 
 .specsRow {
@@ -235,7 +235,7 @@
   flex-wrap: wrap;
   gap: 1.25rem;
   font-size: 0.85rem;
-  color: #4b5563;
+  color: var(--text-secondary);
   padding: 0.85rem 0;
   border-top: 1px solid #f3f4f6;
   border-bottom: 1px solid #f3f4f6;
@@ -251,7 +251,7 @@
 .agentName {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .actionButtons {
@@ -262,8 +262,8 @@
 .callBtn {
   padding: 0.5rem 1.25rem;
   border-radius: 50px;
-  border: 1px solid #e5e7eb;
-  color: #1a1a1a;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -271,13 +271,13 @@
 }
 
 .callBtn:hover {
-  border-color: #1a1a1a;
+  border-color: var(--text-primary);
 }
 
 .whatsappBtn {
   padding: 0.5rem 1.25rem;
   border-radius: 50px;
-  background: #1a1a1a;
+  background: var(--text-primary);
   color: var(--bg-card);
   font-size: 0.85rem;
   font-weight: 600;
@@ -292,7 +292,7 @@
 /* Sticky Filter Sidebar */
 .filterSidebar {
   background: var(--bg-card);
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1.5rem;
   position: sticky;
@@ -312,7 +312,7 @@
 
 .filterHeader h3 {
   font-size: 1.05rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .clearLink {
@@ -333,18 +333,18 @@
 .filterGroup label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #4b5563;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
 .filterGroup select {
   padding: 0.65rem 0.75rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   background: var(--bg-subtle);
   font-size: 0.9rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   outline: none;
   cursor: pointer;
 }
@@ -358,13 +358,13 @@
   padding: 4rem 2rem;
   background: var(--bg-subtle);
   border-radius: 12px;
-  border: 1px dashed #d1d5db;
+  border: 1px dashed var(--border-strong);
 }
 
 .clearBtn {
   margin-top: 1rem;
   padding: 0.6rem 1.5rem;
-  background: #1a1a1a;
+  background: var(--text-primary);
   color: var(--bg-card);
   border: none;
   border-radius: 8px;
@@ -426,7 +426,7 @@
     border: 1px solid transparent;
     border-radius: 8px;
     background: var(--bg-card);
-    color: #1a1a1a;
+    color: var(--text-primary);
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
@@ -440,7 +440,7 @@
     height: 20px;
     padding: 0 6px;
     border-radius: 999px;
-    background: #1a1a1a;
+    background: var(--text-primary);
     color: var(--bg-card);
     font-size: 0.75rem;
     font-weight: 700;
@@ -482,7 +482,7 @@
     display: block;
     width: 40px;
     height: 4px;
-    background: #d1d5db;
+    background: var(--border-strong);
     border-radius: 999px;
     margin: 0 auto 0.25rem;
   }
@@ -494,9 +494,9 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border-color);
     background: var(--bg-card);
-    color: #1a1a1a;
+    color: var(--text-primary);
     font-size: 0.9rem;
     cursor: pointer;
   }
@@ -518,7 +518,7 @@
     padding: 0.85rem 1rem;
     border: none;
     border-radius: 10px;
-    background: #1a1a1a;
+    background: var(--text-primary);
     color: var(--bg-card);
     font-size: 0.95rem;
     font-weight: 600;

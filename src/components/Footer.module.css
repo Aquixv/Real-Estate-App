@@ -82,7 +82,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85rem;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .legalLinks {
@@ -91,7 +91,7 @@
 }
 
 .legalLinks a {
-  color: #6b7280;
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s ease;
 }

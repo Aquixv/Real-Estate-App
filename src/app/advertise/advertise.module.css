@@ -11,9 +11,9 @@
 .buttonStyle{
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 50px;
-  color: #1a1a1a;
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -33,14 +33,14 @@
   font-family: var(--font-playfair), serif;
   font-size: 3.25rem;
   line-height: 1.15;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 1.25rem;
 }
 
 .subtitle {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #6b7280;
+  color: var(--text-muted);
   margin-bottom: 2rem;
 }
 
@@ -52,7 +52,7 @@
 
 .primaryBtn {
   display: inline-block;
-  background-color: #1a1a1a;
+  background-color: var(--text-primary);
   color: var(--bg-card);
   padding: 0.9rem 1.75rem;
   border-radius: 8px;
@@ -68,9 +68,9 @@
 
 .secondaryBtn {
   display: inline-block;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-strong);
   background-color: var(--bg-card);
-  color: #1a1a1a;
+  color: var(--text-primary);
   padding: 0.9rem 1.75rem;
   border-radius: 8px;
   font-weight: 600;
@@ -80,7 +80,7 @@
 }
 
 .secondaryBtn:hover {
-  border-color: #1a1a1a;
+  border-color: var(--text-primary);
 }
 
 /* Grids */
@@ -104,7 +104,7 @@
 .card,
 .typeCard {
   background: var(--bg-subtle);
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 2rem;
   display: flex;
@@ -126,13 +126,13 @@
 .typeTitle {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .cardText {
   font-size: 0.95rem;
   line-height: 1.65;
-  color: #6b7280;
+  color: var(--text-muted);
 }
 
 .typeHeader {
@@ -155,7 +155,7 @@
 .typeLink {
   margin-top: auto;
   padding-top: 0.75rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
@@ -169,7 +169,7 @@
 /* Bottom CTA Banner */
 .ctaBanner {
   background: var(--bg-subtle);
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 3rem;
   display: flex;
@@ -181,12 +181,12 @@
 .bannerTitle {
   font-family: var(--font-playfair), serif;
   font-size: 1.85rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .bannerText {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 

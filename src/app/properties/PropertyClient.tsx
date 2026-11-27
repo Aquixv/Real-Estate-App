@@ -252,7 +252,7 @@ export default function PropertiesClient({ initialProperties }: PropertiesClient
                                 <BedIcon /> {prop.beds} Beds
                               </span>
                               <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                                <BathIcon /> {prop.baths} Baths
+                                <BathIcon /> {prop.baths} {prop.baths === 1 ? "bath" : "baths"}
                               </span>
                               <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
                                 <img
