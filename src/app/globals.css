@@ -7,6 +7,11 @@
 
 /* 2. Global Brand Variables */
 :root {
+  --color-background: #ffffff;
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #4a4a4a;
+  --color-accent-gold: #bfa173;
+  --color-accent-gold-hover: #a68a5f;
   --bg-page: #ffffff;
   --bg-card: #ffffff;
   --bg-subtle: #fafafa;
@@ -18,7 +23,6 @@
   --accent: #4f46e5;
   --accent-soft: #e0e7ff;
 }
-
 [data-theme="dark"] {
   --bg-page: #0b0f19;
   --bg-card: #111827;
@@ -31,11 +35,16 @@
   --accent: #6366f1;
   --accent-soft: rgba(99, 102, 241, 0.16);
 }
-
+/* 3. Base Typography */
 body {
   background-color: var(--bg-page);
   color: var(--text-primary);
   transition: background-color 0.2s ease, color 0.2s ease;
+  /* Uses the Montserrat font you loaded in layout.tsx */
+  font-family: var(--font-montserrat), system-ui, sans-serif; 
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* 4. Heading Typography */
