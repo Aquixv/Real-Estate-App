@@ -56,7 +56,7 @@
 }
 
 .faqItem[open] {
-  background: #ffffff;
+  background: var(--bg-card);
   border-color: #d1d5db;
 }
 
@@ -154,7 +154,7 @@
 .primaryBtn {
   display: inline-block;
   background-color: #1a1a1a;
-  color: #ffffff;
+  color: var(--bg-card);
   padding: 0.85rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;

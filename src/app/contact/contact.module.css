@@ -1,7 +1,7 @@
 .contactMain {
   min-height: 80vh;
   padding: 6rem 2rem;
-  background-color: var(--color-background, #ffffff);
+  background-color: var(--color-background, var(--bg-card));
 }
 
 .contactContainer {
@@ -79,7 +79,7 @@
 .whatsappBtn:hover {
   background-color: #25D366;
   border-color: #25D366;
-  color: #ffffff;
+  color: var(--bg-card);
   transform: translateY(-1px);
 }
 

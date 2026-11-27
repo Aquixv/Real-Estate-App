@@ -7,13 +7,13 @@
 
 /* 2. Global Brand Variables */
 :root {
-  --color-background: #ffffff;
+  --color-background: var(--bg-card);
   --color-text-main: #1a1a1a;
   --color-text-muted: #4a4a4a;
   --color-accent-gold: #bfa173;
   --color-accent-gold-hover: #a68a5f;
-  --bg-page: #ffffff;
-  --bg-card: #ffffff;
+  --bg-page: var(--bg-card);
+  --bg-card: var(--bg-card);
   --bg-subtle: #fafafa;
   --text-primary: #1a1a1a;
   --text-secondary: #4b5563;

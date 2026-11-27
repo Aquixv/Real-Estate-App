@@ -53,7 +53,7 @@
 .primaryBtn {
   display: inline-block;
   background-color: #1a1a1a;
-  color: #ffffff;
+  color: var(--bg-card);
   padding: 0.9rem 1.75rem;
   border-radius: 8px;
   font-weight: 600;
@@ -69,7 +69,7 @@
 .secondaryBtn {
   display: inline-block;
   border: 1px solid #d1d5db;
-  background-color: #ffffff;
+  background-color: var(--bg-card);
   color: #1a1a1a;
   padding: 0.9rem 1.75rem;
   border-radius: 8px;

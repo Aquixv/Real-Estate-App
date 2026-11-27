@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #ffffff;
+  color: var(--bg-card);
   padding: 0 2rem;
   z-index: 1;
 }

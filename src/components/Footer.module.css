@@ -22,7 +22,7 @@
 }
 
 .logo {
-  color: #ffffff;
+  color: var(--bg-card);
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
@@ -42,7 +42,7 @@
 }
 
 .heading {
-  color: #ffffff;
+  color: var(--bg-card);
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
@@ -65,7 +65,7 @@
 }
 
 .list a:hover {
-  color: #ffffff;
+  color: var(--bg-card);
 }
 
 /* Bottom Bar */
@@ -97,7 +97,7 @@
 }
 
 .legalLinks a:hover {
-  color: #ffffff;
+  color: var(--bg-card);
 }
 
 /* Responsive Breakpoints */
