@@ -98,11 +98,13 @@
 }
 
 .dropdownItem:hover {
-  background-color: #f8fafc;
+  background-color: var(--navbar-hover);
   /* color: none; */
   color: none;
 }
-
+:global([data-theme="dark"]) .logo {
+  filter: brightness(0) invert(1);
+}
 .divider {
   height: 1px;
   background-color: var(--border-color);
@@ -121,7 +123,7 @@
 
 .viewAllItem:hover {
   /* color: none; */
-  background-color: #f8fafc;
+  background-color: var(--navbar-hover);
   /* color: var(--accent); */
 }
 

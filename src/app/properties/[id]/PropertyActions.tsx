@@ -14,14 +14,12 @@ export default function PropertyActions() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback if clipboard is blocked
     }
   };
 
   const handleReport = () => {
     if (!reported) {
       setReported(true);
-      // Later: open a modal or POST to /api/reports
     }
   };
 

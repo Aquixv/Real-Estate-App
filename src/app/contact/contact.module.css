@@ -1,7 +1,7 @@
 .contactMain {
   min-height: 80vh;
   padding: 6rem 2rem;
-  background-color: var(--color-background, var(--bg-card));
+  background-color: var(--bg-page);
 }
 
 .contactContainer {
@@ -22,13 +22,13 @@
   font-family: var(--font-playfair), serif;
   font-size: 3.75rem;
   line-height: 1.1;
-  color: var(--color-text-main, var(--text-primary));
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
 }
 
 .subtitle {
   font-size: 1.125rem;
-  color: var(--color-text-muted, var(--text-muted));
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 3.5rem;
   max-width: 90%;
@@ -46,12 +46,12 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-text-main, var(--text-primary));
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .detailItem p {
-  color: var(--color-text-muted, var(--text-muted));
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -106,7 +106,7 @@
 .inputGroup label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-text-main, var(--text-primary));
+  color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -120,12 +120,12 @@
   padding: 0.75rem 0;
   font-family: var(--font-montserrat), sans-serif;
   font-size: 1rem;
-  color: var(--color-text-main, var(--text-primary));
+  color: var(--text-primary);
   transition: border-color 0.2s ease;
 }
 
 .input::placeholder, .textarea::placeholder {
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .input:focus, .textarea:focus {
@@ -199,4 +199,4 @@
   .contactContainer {
     gap: 3rem;
   }
-}
+} 
